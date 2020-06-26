@@ -6,7 +6,7 @@ services:
       - "3306:3306"
     volumes:
       - ./my.cnf:/etc/mysql/my.cnf
-      - mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
       - ./import:/root
     networks:
       - bridge
@@ -15,8 +15,6 @@ services:
       - TZ=Asia/Bangkok
     restart: always
 
-volumes:
-  mysql_data:
 
 networks:
   bridge:
